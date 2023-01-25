@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../public/style.css">
+        <link rel="stylesheet" href="@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                <h1><%= title %></h1>
+                <br>
+                <a href="/pharmacy/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i>Add Medicine</a>
+                
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                    <tr class="d-flex">
+                        <th class="text-center col-2">Name</th>
+                        <th class="text-center col-2">Company</th>
+                        <th class="text-center col-2">Quantity</th>
+                        <th class="col-2">Price</th>
+                        <th class="col-1"></th>
+                        <th class="text-center col-1"></th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Repeatable Template Row-->
+                    <% for(let count=0; count< MediList.length; count++){ %>
+                     <tr class="d-flex">
+                         <td class="text-center col-2">
+                             <%= MediList[count].name %>
+                         </td>
+                         <td class="text-center col-2">
+                             <%= MediList[count].company%>
+                         </td>
+                         <td class="text-center col-2">
+                             <%= MediList[count].quantity %>
+                         </td>
+                         <td class="col-2">
+                             <%= MediList[count].price %>
+                         </td>
+                         <td class="text-center col-1">
+                             <a href="/pharmacy/edit/<%= MediList[count]._id %>" class="btn btn-primary btn-sm">
+                                 <i class="fas fa-pencil-alt"></i>Edit
+                                 </a>
+                         </td>
+                         <td class="text-center col-1">
+                             <a href="/pharmacy/delete/<%= MediList[count]._id %>" class="btn btn-danger btn-sm">
+                                 <i class="fas fa-trash-alt"></i>Delete
+                                 </a>
+                         </td>
+                     </tr>
+                     <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

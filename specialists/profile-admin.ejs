@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Specialist Info</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../public/style.css">
+    </head>
+    <body class="specBody">
+      <nav>
+        <h4>MediCare</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/logout">Logout</a></li>           
+            <li><a href="/spec">Specialist</a></li>
+            <li><a href="/spec/add-specialist">Add specialist</a></li>
+        </ul>
+    </nav>
+        <% for(let count=0; count< SpecList.length; count++){ %>
+        <div class="card" style="width: 31rem;margin-right: 1cm; margin-left: 5.5cm; margin-top: 2cm; float: left;">
+            <img style="height: 8cm;" class="card-img-top" src="../public/thomas-thekkekandam-300x374.jpg" alt="Card image cap">
+            <div style="height: 7cm;" class="card-body">
+              <h5 class="card-title" id="currentValue"><%= SpecList[count].name %></h5>
+              <p class="card-text"><label for="Qualifications">Qualifications:&nbsp;&nbsp </label><%= SpecList[count].field %></p>
+              <p class="card-text"><label for="Qualifications">Info: &nbsp;&nbsp;</label><%= SpecList[count].intro %></p>
+              <a href="spec/my-appointments/<%= SpecList[count].name %>" class="btn btn-primary">My Appointments</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+          </div>
+          <% } %>
+          &nbsp;
+    </body>
+</html>

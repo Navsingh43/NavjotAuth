@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../public/style.css">
+        <link rel="stylesheet" href="@fortawesome/fontawesome-free/css/all.min.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <h1><%= title %>
+                    </h1>
+                <form class="form" method="post">
+                    <div class="form-group">
+                        <label for="nameTextField">Name</label>
+                        <input type="text" value="<%= book.name %>" name="name" class="form-control" id="nameTextField" placeholder="Enter the Book's Title" required>
+        
+                    </div>
+                    <div class="form-group">
+                        <label for="authorTextField">Company</label>
+                        <input type="text" value="<%= book.company %>" name="company" class="form-control" id="companyTextField" placeholder="Enter the Book's Author" required>
+        
+                    </div>
+                    <div class="form-group">
+                        <label for="publishedTextField">Price</label>
+                        <input type="text" value="<%= book.price %>" name="price" class="form-control" id="priceTextField" placeholder="Enter the Book's year of publication" required>
+        
+                    </div>
+                    <div class="form-group">
+                        <label for="desciptionTextField">Quantity</label>
+                        <input type="text" value="<%= book.quantity %>" name="quantity" class="form-control" id="quantityTextField" placeholder="Enter the Book's Description" required>
+        
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i>Submit
+                         </button>
+                         <a class="btn btn-warning" href="/pharmacy/list">
+                             <i class="fas fa-undo"></i>Cancel</a>
+                        
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<%- include('partials/header-admin.ejs') %>.
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h3>Specialist List </h3>
+      <a href="/admin/managespecialist/addspecialist" class="btn btn-primary"><i class="fa fa-plus"></i> Add a Specialist</a>
+      <br>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Specialist Name</th>
+              <th>Field of Interest</th>
+              <th>Intro</th>
+              <th class="text-center">Edit</th>
+              <th class="text-center">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (let count = 0; count < list.length; count++) { %>
+            <tr>
+              <td class="text-center"><%= list[count].name %></td>
+              <td class="text-center"><%= list[count].field %></td>
+              <td class="text-center"><%= list[count].intro %></td>
+              <td class="text-center">
+                <a href="/admin/managespecialist/edit/<%= list[count]._id %>" class="btn btn-primary btn-sm">Edit</a>
+                </td>
+                <td class="text-center">
+                <a href="/admin/managespecialist/delete/<%= list[count]._id %>" class="btn btn-danger btn-sm">Delete</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+       <div class="col-md-offset-1 col-md-10 text-center">
+        <ul class="pagination pagination-lg pager" id="myPager"></ul>
+      </div>
+    </div>
+  </div>
+</div>

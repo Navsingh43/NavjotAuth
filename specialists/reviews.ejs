@@ -1,0 +1,24 @@
+<html>
+    <head>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        
+        <div class="container-m" style="margin-left: 2cm; margin-top:2cm;">
+            <div class="row">
+                <% for(let count=0; count< RevList.length; count++){ %>
+                <div class="col-md-4">
+                    <div class="card"> <i class="fa fa-quote-left u-color"></i>
+                        <p> <%= RevList[count].content %></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user-about"> <span class="font-weight-bold d-block">By:  <%= RevList[count].name %></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>

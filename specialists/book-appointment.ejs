@@ -1,0 +1,44 @@
+<html>
+    <head>  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../public/style.css">
+        <link rel="stylesheet" href="@fortawesome/fontawesome-free/css/all.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                   
+                    </h1>
+                <form class="form" method="Post">
+                    
+                    <div class="form-group">
+                        <label for="nameTextField">Name</label>
+                        <input type="text" name="name" class="form-control" id="nameTextField" placeholder="Enter your name" required>
+        
+                    </div>
+                    <div class="form-group">
+                        <label for="authorTextField">Email</label>
+                        <input type="text" name="email" class="form-control" id="emailTextField" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priceTextField">Day</label>
+                        <input type="date" name="day" class="form-control" id="dateTextField" placeholder="dd:mm:yyyy" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priceTextField">Time</label>
+                        <input type="time" name="time" class="form-control" id="timeTextField"  required>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i>Submit
+                         </button>
+                         <a class="btn btn-warning" href="/spec">
+                             <i class="fas fa-undo"></i>Cancel</a>            
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
